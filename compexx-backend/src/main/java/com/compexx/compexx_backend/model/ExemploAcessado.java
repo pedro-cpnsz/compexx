@@ -2,8 +2,6 @@ package com.compexx.compexx_backend.model;
 
 import java.sql.Timestamp;
 
-import org.hibernate.annotations.CreationTimestamp;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,13 +33,13 @@ public class ExemploAcessado {
     @ManyToOne
     private Exemplo exemplo;
 
-    @CreationTimestamp
-    @Column(name = "data_publicacao", updatable = false)
-    private Timestamp data_publicacao;
+    @Column(name = "dataAcesso")
+    private Timestamp dataAcesso;
 
-    public ExemploAcessado(UsuarioInstituicao usuarioInstituicao, Exemplo exemplo) {
+    public ExemploAcessado(UsuarioInstituicao usuarioInstituicao, Exemplo exemplo, Timestamp dataAcesso) {
         this.usuarioInstituicao = usuarioInstituicao;
         this.exemplo = exemplo;
+        this.dataAcesso = dataAcesso;
     }
 
 }

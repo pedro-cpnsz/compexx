@@ -36,8 +36,8 @@ public class UsuarioInstituicao {
     private Instituicao instituicao;
 
     @CreationTimestamp
-    @Column(name = "data_publicacao", updatable = false)
-    private Timestamp data_publicacao;
+    @Column(name = "dataInsercao", updatable = false)
+    private Timestamp dataInsercao;
 
     public UsuarioInstituicao(Usuario usuario, Instituicao instituicao) {
         this.usuario = usuario;

@@ -35,16 +35,16 @@ public class Exemplo {
 
     @JoinColumn(name = "idAssunto", referencedColumnName = "id")
     @ManyToOne
-    private Assunto assunto;
+    private Materia materia;
 
     @CreationTimestamp
-    @Column(name = "data_publicacao", updatable = false)
-    private Timestamp data_publicacao;
+    @Column(name = "dataInsercao", updatable = false)
+    private Timestamp dataInsercao;
 
-    public Exemplo(String titulo, String implementacao, Assunto assunto) {
+    public Exemplo(String titulo, String implementacao, Materia materia) {
         this.titulo = titulo;
         this.implementacao = implementacao;
-        this.assunto = assunto;
+        this.materia = materia;
     }
 
 }

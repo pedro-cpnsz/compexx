@@ -9,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,12 +30,17 @@ public class Materia {
     @Column(name = "nome")
     private String nome;
 
-    @CreationTimestamp
-    @Column(name = "dataCadastro", updatable = false)
-    private Timestamp dataCadastro;
+    @JoinColumn(name = "idMateria", referencedColumnName = "id")
+    @ManyToOne
+    private Assunto assunto;
 
-    public Materia(String nome) {
+    @CreationTimestamp
+    @Column(name = "dataInsercao", updatable = false)
+    private Timestamp dataInsercao;
+
+    public Materia(String nome, Assunto assunto) {
         this.nome = nome;
+        this.assunto = assunto;
     }
 
 }

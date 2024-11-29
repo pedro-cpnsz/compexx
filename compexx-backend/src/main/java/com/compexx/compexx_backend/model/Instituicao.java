@@ -32,8 +32,8 @@ public class Instituicao {
     private String cnpj;
 
     @CreationTimestamp
-    @Column(name = "dataCadastro", updatable = false)
-    private Timestamp dataCadastro;
+    @Column(name = "dataInsercao", updatable = false)
+    private Timestamp dataInsercao;
 
     public Instituicao(String razaoSocial, String cnpj) {
         this.razaoSocial = razaoSocial;

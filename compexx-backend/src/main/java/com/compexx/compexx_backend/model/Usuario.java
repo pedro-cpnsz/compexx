@@ -41,8 +41,8 @@ public class Usuario {
     private boolean isAdmin;
 
     @CreationTimestamp
-    @Column(name = "dataCadastro", updatable = false)
-    private Timestamp dataCadastro;
+    @Column(name = "dataInsercao", updatable = false)
+    private Timestamp dataInsercao;
 
     public Usuario(String nome, String email, String senha, String telefone, boolean isAdmin) {
         this.nome = nome;
